@@ -1,0 +1,159 @@
+/* styles.module.css */
+.container {
+    height: 100%;
+    position: relative;
+    display: flex;
+}
+
+.map-container {
+    height: 100%;
+    flex: 1;
+}
+
+.sidebar {
+    height: 100vh;
+    width: 0;
+    transition: width 0.4s;
+    overflow: visible;
+    top: 0;
+    left: 0;
+    border-radius: 5rem;
+}
+
+.sidebar-open {
+    height: 100vh;
+    width: 25%; /* Set the width of the sidebar when open */
+    transition: width 0.4s;
+    overflow: visible;
+    top: 0;
+    left: 0;
+    border-radius: 5rem;
+}
+
+.icon-background{
+    width: 6%;
+    height: 13%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transition: left 0.4s;
+    transform: translateY(-20%);
+    background-color: #fff;
+    border-top-right-radius: 20%;
+    border-bottom-right-radius: 20%;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.icon-background-open{
+    width: 6%;
+    height: 13%;
+    position: absolute;
+    top: 50%;
+    left: 20%; /* Set the width of the sidebar when open */
+    transition: left 0.4s;
+    transform: translateY(-20%);
+    background-color: #fff;
+    border-radius: 20%;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5vmax;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+/* sidepanel content styling */
+/* styles.module.css */
+.custom-input-container {
+    position: absolute;
+    text-align: center;
+    margin: auto;
+    top: 10%;
+    left: 6%;
+    
+    overflow: hidden;
+    border-width: 3px;
+    font-family: Poppins, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.custom-input-container h1 {
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.custom-input-container input  {
+    font-size: 1rem;
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin: auto;
+    background-color: white;
+    margin-bottom: 15px;
+    border: none; /* Remove the default borders */
+    border-image: #ccc; /* Set initial border image */
+    border-image-slice: 1;
+    border-width: 2px;
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none; /* Remove the default focus outline */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+.custom-input-container input:focus{
+    animation: loadBorder 1s forwards;
+    color: black;
+}
+
+@keyframes loadBorder {
+    0% {
+        border-image-source: linear-gradient(0deg, #ccc, #ccc); /* Start with the initial color */
+        background-size: 100% 100%;
+        background-position: 100% 0%;
+    }
+    100% {
+        border-image-source: linear-gradient(90deg, #20D6FF, #D41D6D); /* End with the gradient color */
+        background-size: 100% 100%;
+        background-position: 100% 100%;
+    }
+}
+
+
+/* Add media query for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+    }
+
+    .map-container {
+        height: 50%; /* Adjust the height as needed */
+    }
+
+    .sidebar, .sidebar-open {
+        width: 100%; /* Expand the sidebar to full width on smaller screens */
+    }
+
+    .icon-background, .icon-background-open {
+        width: 100%; /* Expand the icon background to full width on smaller screens */
+        left: 0; /* Reset the left position */
+    }
+
+    .material-symbols-outlined {
+        font-size: 30px; /* Reduce the font size for smaller screens */
+    }
+}
+
+
